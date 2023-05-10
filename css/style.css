@@ -7,16 +7,6 @@
 }
 
 
-/*** Spinner ***/
-.spinner {
-    width: 40px;
-    height: 40px;
-    background: var(--primary);
-    margin: 100px auto;
-    -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
-    animation: sk-rotateplane 1.2s infinite ease-in-out;
-}
-
 @-webkit-keyframes sk-rotateplane {
     0% {
         -webkit-transform: perspective(120px)
@@ -43,7 +33,11 @@
         -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
     }
 }
-
+form {
+    border: 2px solid black;
+    padding-bottom: 20px;
+    padding-top: 30px;
+  } 
 
 /*** Heading ***/
 h1,
