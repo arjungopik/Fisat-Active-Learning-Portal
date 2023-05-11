@@ -106,7 +106,7 @@ body {
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
-  background: rgb(45, 24, 105);
+  background: rgb(87, 38, 223);
 }
 .form button:hover {
   background: rgb(193, 31, 31);
