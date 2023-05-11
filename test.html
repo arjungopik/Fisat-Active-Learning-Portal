@@ -32,11 +32,11 @@
           <div class="column">
             <div class="select-box">
               <select>
-                <option hidden>academic year</option>
-                <option>America</option>
-                <option>Japan</option>
-                <option>India</option>
-                <option>Nepal</option>
+                <option hidden>Academic year</option>
+                <option>2019-2023</option>
+                <option>2020-2024</option>
+                <option>2021-2025</option>
+                <option>2022-2026</option>
               </select>
             </div>
             <input type="date" required />
@@ -45,44 +45,61 @@
             
           </div>
         </div>
-        <div class="gender-box">
-          <h3>Gender</h3>
-          <div class="gender-option">
-            <div class="gender">
-              <input type="radio" id="check-male" name="gender" checked />
-              <label for="check-male">male</label>
-            </div>
-            <div class="gender">
-              <input type="radio" id="check-female" name="gender" />
-              <label for="check-female">Female</label>
-            </div>
-            <div class="gender">
-              <input type="radio" id="check-other" name="gender" />
-              <label for="check-other">prefer not to say</label>
-            </div>
-          </div>
-        </div>
+
+        
         <div class="input-box address">
-          <label>Address</label>
-          <input type="text" placeholder="Enter street address" required />
-          <input type="text" placeholder="Enter street address line 2" required />
           <div class="column">
             <div class="select-box">
               <select>
-                <option hidden>Country</option>
-                <option>America</option>
-                <option>Japan</option>
-                <option>India</option>
-                <option>Nepal</option>
+                <option hidden>Class</option>
+                <option>CSE A</option>
+                <option>CSE B</option>
+                <option>CSD A</option>
+                <option>CSD B</option>
               </select>
             </div>
-            <input type="text" placeholder="Enter your city" required />
+            <input type="text" placeholder="Faculty in charge" required />
           </div>
           <div class="column">
-            <input type="text" placeholder="Enter your region" required />
-            <input type="number" placeholder="Enter postal code" required />
+            <input type="text" placeholder="Topic" required />
+          </div>
+          <div>
+            <div class="column">
+              <input type="text" placeholder="Learning Outcome" required />
+            </div>
           </div>
         </div>
+        
+        
+        <div class="input-box address">
+          <label>Details of student</label>
+          <input type="text" placeholder="Name" required />
+          <input type="text" placeholder="Roll Number" required />
+          <input type="text" placeholder="Contribution" required />
+          
+        </div>
+        <div class="input-box">
+          <label>Assessment Strategy</label>
+          <input type="text" placeholder="Enter strategy" required />
+        </div>
+        <div class="input-box">
+          <label>Expected Proficiency</label>
+          <input type="text" placeholder="Enter proficiency" required />
+        </div>
+        <div class="input-box address">
+          
+          <div class="column">
+            <input type="text" placeholder="Total Assessment Marks" required />
+            <input type="text" placeholder="Assessment Analysis" required />
+          </div>
+          
+        </div>
+
+        <div class="input-box">
+          <label>Follow up actions/remedial</label>
+          <input type="text" placeholder="Enter if any" required />
+        </div>
+
         <button>Submit</button>
       </form>
     </section>
