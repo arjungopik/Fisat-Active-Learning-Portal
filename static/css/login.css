@@ -29,8 +29,12 @@ body {
   font-weight: 500;
   text-align: center;
 }
-.container .form {
+.container{
   margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .form .input-box {
   width: 50%;
@@ -39,16 +43,11 @@ body {
 .input-box label {
   color: #333;
 }
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
 .form :where(.input-box input, .select-box) {
   position: relative;
   height: 50px;
-  width: 70%;
+  width: 100%;
   outline: none;
   font-size: 1rem;
   color: #707070;
@@ -109,7 +108,7 @@ body {
 }
 .form button {
   height: 55px;
-  width: 50%;
+  width: 100%;
   color: #fff;
   font-size: 1rem;
   font-weight: 400;
@@ -118,6 +117,7 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   background: rgb(78, 43, 172);
+  padding: 15px;
 }
 .form button:hover {
   background: rgb(193, 31, 31);
