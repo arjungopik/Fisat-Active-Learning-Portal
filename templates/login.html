@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Active learning login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" />
+</head>
+
+<body>
+  <section class="l-container">
+    <header>LOGIN</header>
+    <div class="login">
+      <form action="/" class="form" method="POST">
+        <div class="input-box">
+          <label for="user-name">Username</label>
+          <input id="gid" type="text" placeholder="" name="gid" required />
+        </div>
+
+        <div class="input-box">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="" name="password" required />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+</body>
+
+</html>

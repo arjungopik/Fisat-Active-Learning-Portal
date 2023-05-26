@@ -6,23 +6,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="css/login.css" />
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" />
 </head>
 
 <body>
   <section class="container">
-    <header>Choose your active learning method</header>
-    
-      <button>FLIPPED CLASSROOM</button>
-      <br>
-      <button>THINK PAIR SHARE</button>
-      <br>
-      <button>THE MINUTE PAPER</button>
-      <br>
-      <button action="">SEMINAR</button>
-      <br>
-      <button>OTHER</button>
-   
+    <div class="method">
+      <header>Choose your active learning method</header>
+      <form action="/method_selection" method="POST">
+        <input type="submit" name="submit_button" value="Flipped">
+        <input type="submit" name="submit_button" value="Tps">
+        <input type="submit" name="submit_button" value="Seminar">
+        <input type="submit" name="submit_button" value="Minute">
+      </form>
+     
+
+    </div>
   </section>
 </body>
 

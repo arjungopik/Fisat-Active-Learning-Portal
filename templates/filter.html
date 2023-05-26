@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!---Coding By CodingLab | www.codinglabweb.com--->
+<html lang="en">
+  <head>
+    <title>Active Learnig filters</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--<title>Registration Form in HTML CSS</title>-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" />
+  </head>
+  <body>
+    <section class="f-container">
+      <header>SELECT FILTERS</header>
+      <form action="hodpage.html" class="form">
+        <div class="input-box address">
+          <div class="column">
+            <div class="select-box">
+              <select>
+                <option hidden>Academic year</option>
+                <option>2019-2023</option>
+                <option>2020-2024</option>
+                <option>2021-2025</option>
+                <option>2022-2026</option>
+              </select>
+            </div>
+            <div class="select-box">
+              <select>
+                <option hidden>Active learning method</option>  
+                <option>seminar/option>
+                <option>fliped classroom </option>
+                <option>seminar</option>
+                <option>tps</option>
+              </select>
+            </div>
+          </div>
+          <div class="column">
+            
+          </div>
+        </div>
+        <div class="input-box address">
+          <div class="column">
+            <div class="select-box">
+              <select>
+                <option hidden>Class</option>
+                <option>CSE A</option>
+                <option>CSE B</option>
+                <option>CSD A</option>
+                <option>CSD B</option>
+              </select>
+            </div>
+            <input type="text" placeholder="Faculty in charge" required />
+          </div>    
+        
+        
+        
+
+        <button class="filterb">Apply</button>
+      </form>
+    </section>
+  </body>
+</html>
