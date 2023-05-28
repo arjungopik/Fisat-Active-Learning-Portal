@@ -6,17 +6,17 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-body {
+body[class="table"]{
   min-height: 100vh;
   display: flex;
-  align-items: center;
+
   justify-content: center;
   padding: 20px;
   background: rgb(255, 255, 255);
 }
 
 .container {
-  max-width: 500px;
+  max-width: 1000px;
   width: 100%;
   background: #fff;
   padding: 25px;
@@ -50,6 +50,15 @@ body {
   border: 1px solid #ddd;
   border-radius: 6px;
   padding: 0 15px;
+}
+input[type=submit] {
+  background-color:rgb(87, 38, 223);
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 .input-box input:focus {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
@@ -194,14 +203,20 @@ body {
   border-radius: 12px;
   margin-bottom: 7px;
 }
-input {
-  background-color:rgb(87, 38, 223);
+.t-container .addnew{
+  border-radius: 12px;
+  height: 35px;
+  width: 20%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 10px;
   border: none;
-  color: white;
-  padding: 16px 32px;
-  text-decoration: none;
-  margin: 4px 2px;
   cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgb(87, 38, 223);
+  border-radius: 12px;
+  margin-bottom: 7px;
 }
 .t-container {
   max-width: 1000px;
@@ -212,30 +227,6 @@ input {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-.lo-container {
-  max-width: 1000px;
-  width: 100%;
-  background: #fff;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-.lo-container button{
-  border-radius: 12px;
-  height: 55px;
-  width: 30%;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 400;
-  margin-top: 30px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  background: rgb(87, 38, 223);
-  border-radius: 12px;
-}
-
 table {
   width: 100%;
   border-collapse: collapse;

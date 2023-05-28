@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>Active learning login</title>
   <meta charset="UTF-8" />
@@ -9,7 +8,7 @@
   <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" />
 </head>
 
-<body>
+<body class="table">
 
   <section class="t-container">
     <div class="bg-cyan-100/50 flex items-center">
@@ -20,9 +19,10 @@
 
 
     <header>Activity learning details-'CSE'</header>
-    <form action="/filter">
-    <button class="filter" >filter</button>
-  </form>
+    <form action="/filter" method="POST">
+      <input type="submit" name="submit_button" value="Filter">
+        <input type="submit" name="submit_button" value="Add">
+    </form>
     <table>
       <thead>
         <tr>
@@ -32,58 +32,34 @@
           <th>Date</th>
           <th>Academic Year</th>
           <th>Class</th>
-          <th>link</th>
           <th>Method</th>
+          <th>link</th>
         </tr>
       </thead>
       <tbody>
+        {% for data in tps_data %}
         <tr>
-          <td>CSCI101</td>
-          <td>Introduction to Computer Science</td>
-          <td>Dr. Jane Smith</td>
-          <td>May 13, 2023</td>
-          <td>2022-2023</td>
-          <td>Section A</td>
-          <td>link</td>
-          <td>seminar</td>
+          
+          <td>{{ data.id }}</td>
+          <td>{{ data.academic_year }}</td>
+          <td>{{data.faculty_in_charge}}</td>
+          <td>{{data.date}}</td>
+          <td>{{data.academic_year}}</td>
+          <td>{{data.class_name}}</td>
+          <td>tps</td>
         </tr>
-        <tr>
-          <td>MATH201</td>
-          <td>Calculus II</td>
-          <td>Prof. John Doe</td>
-          <td>May 14, 2023</td>
-          <td>2022-2023</td>
-          <td>Section B</td>
-          <td>link</td>
-          <td>seminar</td>
-        </tr>
-        <tr>
-          <td>ENG101</td>
-          <td>English Composition</td>
-          <td>Dr. Sarah Lee</td>
-          <td>May 15, 2023</td>
-          <td>2022-2023</td>
-          <td>Section C</td>
-          <td>link</td>
-          <td>seminar</td>
-        </tr>
-      </tbody>
+        {% endfor %}
     </table>
+
     <div class="pagination">
 
-     <div class="pagination">
-      <span class="page-number"></span>
-    <button class="prev-btn">Previous</button>
+      <div class="pagination">
+        <span class="page-number"></span>
+        <button class="prev-btn">Previous</button>
 
-    <button class="next-btn">Next</button>
-    </div>
+        <button class="next-btn">Next</button>
+      </div>
   </section>
-
-    <!-- ... table code ... -->
-  
-
-
-  
   <script src="script.js"></script>
 </body>
 

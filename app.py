@@ -6,6 +6,18 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:user@localhost:54
 db = SQLAlchemy(app)
 
 
+class Data(db.Model):
+    __tablename__ = 'data'
+    id = db.Column(db.Integer, primary_key=True)
+    academic_year = db.Column(db.String)
+    date = db.Column(db.Date)
+    class_name = db.Column(db.String)
+    faculty_id =  db.Column(db.String)
+    faculty_in_charge = db.Column(db.String)
+    course_code = db.Column(db.String)
+    course_name = db.Column(db.String)
+    topic = db.Column(db.String)
+
 class MinuteFormData(db.Model):
     __tablename__ = 'minute_form_data'
     id = db.Column(db.Integer, primary_key=True)
@@ -88,7 +100,8 @@ def index():
         id = request.form.get('gid')
         psw = request.form.get('password')
         if id== psw:
-            return render_template('al-method.html')
+            tps_data = TPSFormData.query.all()
+            return render_template('hodpage.html', tps_data=tps_data)
     else:
         return render_template('login.html')
 
@@ -181,7 +194,9 @@ def tps():
 
         db.session.add(tps_form_data)
         db.session.commit()
-        return "Form submitted successfully"
+        inserted_id = tps_form_data.id
+        return f"Form data inserted with id: {inserted_id}"
+        
     else:
     
         return render_template('tps.html')
@@ -246,6 +261,17 @@ def meth():
         
     else:
         return render_template("al-method.html")
+
+@app.route('/filter', methods=['POST','GET'])
+def fil():
+    if request.method == 'POST':
+        if request.form['submit_button'] == "Filter":
+            return render_template("filter.html")
+        elif request.form['submit_button'] == "Add" :
+            return render_template("al-method.html")
+
+
+
 
 if __name__ == '__main__':
     with app.app_context():
