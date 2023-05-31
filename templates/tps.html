@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<!---Coding By CodingLab | www.codinglabweb.com--->
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <!--<title>Registration Form in HTML CSS</title>-->
-  <!---Custom CSS File--->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
+
 <body>
   <section class="container">
-    <img src="img/logo.png" alt="" width="100%" />
+    <img src="{{ url_for('static',filename='img/logo1.png') }}" alt="" width=7% />
+    <img src="{{ url_for('static',filename='img/logo.png') }}" alt="" height="" width=80% />
+    <hr>
     <header>ACTIVITY-THINK PAIR SHARE</header>
     <form action="/tps" class="form" method="POST">
       <div class="input-box address">
@@ -65,7 +66,8 @@
         <div>
           <div class="column">
             <input type="text" name="addressed_course_outcomes" placeholder="Addressed Course Outcomes" required />
-            <input type="text" name="knowledge_level_assessment_activity" placeholder="Knowledge Level of Assessment Activity" required />
+            <input type="text" name="knowledge_level_assessment_activity"
+              placeholder="Knowledge Level of Assessment Activity" required />
           </div>
         </div>
       </div>
@@ -84,7 +86,8 @@
         <label>Students are supposed to:</label>
         <input type="text" name="think_phase" placeholder="Think Phase (think individually)" required />
         <input type="text" name="pair_phase" placeholder="Pair Phase (share your idea with the pair)" required />
-        <input type="text" name="share_phase" placeholder="Share Phase (review the ideas of groups and conclude)" required />
+        <input type="text" name="share_phase" placeholder="Share Phase (review the ideas of groups and conclude)"
+          required />
       </div>
 
       <div class="input-box">
@@ -128,4 +131,5 @@
     </form>
   </section>
 </body>
+
 </html>

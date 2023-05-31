@@ -1,102 +1,105 @@
 <!DOCTYPE html>
-<!---Coding By CodingLab | www.codinglabweb.com--->
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!--<title>Registration Form in HTML CSS</title>-->
-    <!---Custom CSS File--->
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" />
-  </head>
-  <body>
-    <section class="container">
-      <img src="img/logo.png" alt="" width="100%" />
-      <header>ACTIVITY-THE MINUTE PAPER</header>
-      <form action="/minute" method="POST" class="form">
-        <div class="input-box address">
-          <div class="column">
-            <div class="select-box">
-              <select name="academic_year">
-                <option hidden>Academic year</option>
-                <option>2019-2023</option>
-                <option>2020-2024</option>
-                <option>2021-2025</option>
-                <option>2022-2026</option>
-              </select>
-            </div>
-            <input type="date" name="date" required />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" />
+</head>
+
+<body>
+  <section class="container">
+    <img src="{{ url_for('static',filename='img/logo1.png') }}" alt="" width=7% />
+    <img src="{{ url_for('static',filename='img/logo.png') }}" alt="" height="" width=80% />
+    <header>ACTIVITY-THE MINUTE PAPER</header>
+    <form action="/minute" method="POST" class="form">
+      <div class="input-box address">
+        <div class="column">
+          <div class="select-box">
+            <select name="academic_year">
+              <option hidden>Academic year</option>
+              <option>2019-2023</option>
+              <option>2020-2024</option>
+              <option>2021-2025</option>
+              <option>2022-2026</option>
+            </select>
           </div>
-          <div class="column">
+          <input type="date" name="date" required />
+        </div>
+        <div class="column">
+        </div>
+      </div>
+      <div class="input-box address">
+        <div class="column">
+          <div class="select-box">
+            <select name="class_name">
+              <option hidden>Class</option>
+              <option>CSE A</option>
+              <option>CSE B</option>
+              <option>CSD A</option>
+              <option>CSD B</option>
+            </select>
           </div>
+          <input type="text" name="faculty_in_charge" placeholder="Faculty in charge" required />
         </div>
-        <div class="input-box address">
-          <div class="column">
-            <div class="select-box">
-              <select name="class_name">
-                <option hidden>Class</option>
-                <option>CSE A</option>
-                <option>CSE B</option>
-                <option>CSD A</option>
-                <option>CSD B</option>
-              </select>
-            </div>
-            <input type="text" name="faculty_in_charge" placeholder="Faculty in charge" required />
-          </div>
-        </div>
-        <div class="input-box">
-          <label>Course Code:</label>
-          <input type="text" name="course_code" placeholder="Enter course code" required />
-        </div>
-        <div class="input-box">
-          <label>Course Name:</label>
-          <input type="text" name="course_name" placeholder="Enter course name" required />
-        </div>
-        <div class="input-box">
-          <input type="text" name="topic" placeholder="Topic" required />
-        </div>
-        <div class="input-box">
-          <input type="text" name="learning_outcome" placeholder="Learning Outcome" required />
-        </div>
-        <div class="input-box">
-          <input type="text" name="addressed_course_outcomes" placeholder="Addressed Course Outcomes" required />
-        </div>
-        <div class="input-box">
-          <input type="text" name="no_of_students_engaged" placeholder="No. of Students Engaged" required />
-        </div>
-        <div class="input-box address">
-          <label>Assessment Questions:</label>
-          <input type="text" name="assessment_questions" placeholder="Question 1" required />
-          <input type="text" name="assessment_questions" placeholder="Question 2" required />
-          <input type="text" name="assessment_questions" placeholder="Question 3" required />
-        </div>
-        <div class="input-box">
-          <label>Alloted Time</label>
-          <input type="text" name="alloted_time" placeholder="Enter in minutes" required />
-        </div>
-        <div class="input-box">
-          <input type="text" name="students_supposed_to" placeholder="Students are supposed to" required />
-        </div>
-        <div class="input-box">
-          <input type="text" name="expected_proficiency" placeholder="Expected Proficiency" required />
-        </div>
-        <div class="input-box">
-          <input type="text" name="total_assessment_marks" placeholder="Total Assessment Marks" required />
-        </div>
-        <div class="input-box">
-          <input type="text" name="assessment_analysis" placeholder="Assessment Analysis" required />
-        </div>
-        <div class="input-box">
-          <input type="text" name="concepts_need_expansion" placeholder="Concepts need further expansion" required />
-        </div>
-        <div class="input-box">
-          <input type="text" name="students_need_expansion" placeholder="Percentage of students need further expansion in each concept" required />
-        </div>
-        <div class="input-box">
-          <input type="text" name="follow_up_actions" placeholder="Follow up actions/remedial" required />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </section>
-  </body>
+      </div>
+      <div class="input-box">
+        <label>Course Code:</label>
+        <input type="text" name="course_code" placeholder="Enter course code" required />
+      </div>
+      <div class="input-box">
+        <label>Course Name:</label>
+        <input type="text" name="course_name" placeholder="Enter course name" required />
+      </div>
+      <div class="input-box">
+        <input type="text" name="topic" placeholder="Topic" required />
+      </div>
+      <div class="input-box">
+        <input type="text" name="learning_outcome" placeholder="Learning Outcome" required />
+      </div>
+      <div class="input-box">
+        <input type="text" name="addressed_course_outcomes" placeholder="Addressed Course Outcomes" required />
+      </div>
+      <div class="input-box">
+        <input type="text" name="no_of_students_engaged" placeholder="No. of Students Engaged" required />
+      </div>
+      <div class="input-box address">
+        <label>Assessment Questions:</label>
+        <input type="text" name="assessment_questions" placeholder="Question 1" required />
+        <input type="text" name="assessment_questions" placeholder="Question 2" required />
+        <input type="text" name="assessment_questions" placeholder="Question 3" required />
+      </div>
+      <div class="input-box">
+        <label>Alloted Time</label>
+        <input type="text" name="alloted_time" placeholder="Enter in minutes" required />
+      </div>
+      <div class="input-box">
+        <input type="text" name="students_supposed_to" placeholder="Students are supposed to" required />
+      </div>
+      <div class="input-box">
+        <input type="text" name="expected_proficiency" placeholder="Expected Proficiency" required />
+      </div>
+      <div class="input-box">
+        <input type="text" name="total_assessment_marks" placeholder="Total Assessment Marks" required />
+      </div>
+      <div class="input-box">
+        <input type="text" name="assessment_analysis" placeholder="Assessment Analysis" required />
+      </div>
+      <div class="input-box">
+        <input type="text" name="concepts_need_expansion" placeholder="Concepts need further expansion" required />
+      </div>
+      <div class="input-box">
+        <input type="text" name="students_need_expansion"
+          placeholder="Percentage of students need further expansion in each concept" required />
+      </div>
+      <div class="input-box">
+        <input type="text" name="follow_up_actions" placeholder="Follow up actions/remedial" required />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+</body>
+
 </html>

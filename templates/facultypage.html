@@ -32,7 +32,6 @@
           <th>Slno</th>
           <th>Course Code</th>
           <th>Course Name</th>
-          <th>Faculty in Charge</th>
           <th>Date</th>
           <th>Academic Year</th>
           <th>Class</th>
@@ -48,14 +47,12 @@
           <td>{{ data.id }}</td>
           <td>{{ data.course_code }}</td>
           <td>{{ data.course_name}}</td>
-          
-          <td>{{data.faculty_in_charge}}</td>
           <td>{{data.date}}</td>
           <td>{{data.academic_year}}</td>
           <td>{{data.class_name}}</td>
           <td>{{data.activity}}</td>
           <td><a href="preview/{{ data.id }}">open</a>  </td>
-          <td><a href="delete/{{ data.id }}">delete</a></td>
+          <td><i class="material-icons" style="color:red">delete</i></td>
 
         </tr>
         {% endfor %}

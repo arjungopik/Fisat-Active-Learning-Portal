@@ -30,6 +30,14 @@ body[class="table"]{
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
+.l-container {
+  max-width: 600px;
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
 .container header {
   font-size: 1.5rem;
   color: #333;
@@ -58,7 +66,22 @@ body[class="table"]{
   border-radius: 6px;
   padding: 0 15px;
 }
-input[type=submit] {
+input[type=submit][name=submission]{
+  border-radius: 12px;
+  height: 35px;
+  width: 120px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgb(87, 38, 223);
+  border-radius: 12px;
+  margin-bottom: 7px;
+}
+input[type=submit]{
   border-radius: 12px;
   height: 35px;
   width: 20%;
@@ -218,7 +241,7 @@ input[type=submit] {
   margin-bottom: 7px;
 }
 .t-container {
-  max-width: 1000px;
+  max-width: 1100px;
   width: 100%;
   background: #fff;
   padding: 25px;

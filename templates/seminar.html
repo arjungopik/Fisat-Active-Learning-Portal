@@ -1,106 +1,152 @@
 <!DOCTYPE html>
-<!---Coding By CodingLab | www.codinglabweb.com--->
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!--<title>Registration Form in HTML CSS</title>-->
-    <!---Custom CSS File--->
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <section class="container">
-      <header>ACTIVITY-SEMINAR</header>
-      <form action="{{ url_for('activity_seminar') }}" method="POST" class="form">
-        <div class="input-box address">
-          <div class="column">
-            <div class="select-box">
-              <select name="academic_year">
-                <option hidden>Academic year</option>
-                <option>2019-2023</option>
-                <option>2020-2024</option>
-                <option>2021-2025</option>
-                <option>2022-2026</option>
-              </select>
-            </div>
-            <input type="date" required name="date" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" />
+</head>
+<body>
+  <section class="container">
+    <img src="{{ url_for('static',filename='img/logo1.png') }}" alt="" width=7% />
+    <img src="{{ url_for('static',filename='img/logo.png') }}" alt="" height="" width=80% />
+    <header>ACTIVITY-SEMINAR</header>
+    <form action="/activity_seminar" method="POST" class="form">
+      <div class="input-box address">
+        <div class="column">
+          <div class="select-box">
+            <select name="academic_year">
+              <option hidden>Academic year</option>
+              <option>2019-2023</option>
+              <option>2020-2024</option>
+              <option>2021-2025</option>
+              <option>2022-2026</option>
+            </select>
           </div>
+          <input type="date" required name="date" />
+        </div>
+        <div class="column">
+
+        </div>
+      </div>
+      <div class="input-box address">
+        <div class="column">
+          <div class="select-box">
+            <select name="class_name">
+              <option hidden>Class</option>
+              <option>CSE A</option>
+              <option>CSE B</option>
+              <option>CSD A</option>
+              <option>CSD B</option>
+            </select>
+          </div>
+          <input type="text" placeholder="Faculty in charge" required name="faculty_in_charge" />
+        </div>
+
+        <div class="input-box">
+          <label>Course Code:</label>
+          <input type="text" placeholder="Enter course code" required name="course_code" />
+        </div>
+
+        <div class="input-box">
+          <label>Course Name:</label>
+          <input type="text" placeholder="Enter course name" required name="course_name" />
+        </div>
+
+        <div class="column">
+          <input type="text" placeholder="Topic" required name="topic" />
+        </div>
+        <div>
           <div class="column">
+            <input type="text" placeholder="Learning Outcome" required name="learning_outcome" />
+          </div>
+        </div>
+        <div>
+          <div class="column">
+            <input type="text" placeholder="Addressed Course Outcomes" required name="addressed_course_outcomes" />
+            <input type="text" placeholder="No. of Students Engaged" required name="no_of_students_engaged" />
+          </div>
+        </div>
+      </div>
+
+      <div class="input-box address">
+        <label>Details of Student contribution:</label>
+        <div class="column">
+          <div class="input-box address">
+            <div id="students-container">
+              <!-- Dynamic fields will be added here -->
+            </div>
             
+            <button type="button" onclick="addStudentField()" class="left-button" style="width: 20%; float:left;border-radius: 25px;">Add Student</button>
           </div>
         </div>
-        <div class="input-box address">
-          <div class="column">
-            <div class="select-box">
-              <select name="class_name">
-                <option hidden>Class</option>
-                <option>CSE A</option>
-                <option>CSE B</option>
-                <option>CSD A</option>
-                <option>CSD B</option>
-              </select>
-            </div>
-            <input type="text" placeholder="Faculty in charge" required name="faculty_in_charge" />
-          </div>
+        
+      </div>
 
-          <div class="input-box">
-            <label>Course Code:</label>
-            <input type="text" placeholder="Enter course code" required name="course_code" />
-          </div>
+      <div class="input-box">
+        <label>Assessment Strategy</label>
+        <input type="text" placeholder="" required name="assessment_strategy" />
+      </div>
 
-          <div class="input-box">
-            <label>Course Name:</label>
-            <input type="text" placeholder="Enter course name" required name="course_name" />
-          </div>
-          
-          <div class="column">
-            <input type="text" placeholder="Topic" required name="topic" />
-          </div>
-          <div>
-            <div class="column">
-              <input type="text" placeholder="Learning Outcome" required name="learning_outcome" />
-            </div>
-          </div>
-          <div>
-            <div class="column">
-              <input type="text" placeholder="Addressed Course Outcomes" required name="addressed_course_outcomes" />
-              <input type="text" placeholder="No. of Students Engaged" required name="no_of_students_engaged" />
-            </div>
-          </div>
-        </div>
-        
-        <div class="input-box address">
-          <label>Details of Students:</label>
-          <input type="text" placeholder="Name" required name="student_name" />
-          <input type="text" placeholder="Roll No:" required name="roll_no" />
-          <input type="text" placeholder="Contribution" required name="contribution" />
-        </div>
-        
-        <div class="input-box">
-          <label>Assessment Strategy</label>
-          <input type="text" placeholder="" required name="assessment_strategy" />
-        </div>
-        
-        <div class="input-box">
-          <label>Expected Proficiency</label>
-          <input type="text" placeholder="Enter proficiency" required name="expected_proficiency" />
-        </div>
-        
-        <div class="input-box address">
-          <div class="column">
-            <input type="text" placeholder="Total Assessment Marks" required name="total_assessment_marks" />
-            <input type="text" placeholder="Assessment Analysis" required name="assessment_analysis" />
-          </div>
-        </div>
-        
-        <div class="input-box">
-          <label>Follow up actions/remedial</label>
-          <input type="text" placeholder="Enter if any" required name="follow_up_actions" />
-        </div>
+      <div class="input-box">
+        <label>Expected Proficiency</label>
+        <input type="text" placeholder="Enter proficiency" required name="expected_proficiency" />
+      </div>
 
-        <button type="submit">Submit</button>
-      </form>
-    </section>
-  </body>
+      <div class="input-box address">
+        <div class="column">
+          <input type="text" placeholder="Total Assessment Marks" required name="total_assessment_marks" />
+          <input type="text" placeholder="Assessment Analysis" required name="assessment_analysis" />
+        </div>
+      </div>
+
+      <div class="input-box">
+        <label>Follow up actions/remedial</label>
+        <input type="text" placeholder="Enter if any" required name="follow_up_actions" />
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+  <script>
+    let studentCounter = 1;
+    function addStudentField() {
+      var container = document.getElementById("students-container");
+
+      var studentField = document.createElement("div");
+      studentField.classList.add("column");
+
+      var nameInput = document.createElement("input");
+      nameInput.type = "text";
+      nameInput.placeholder = "Name";
+      nameInput.required = true;
+      nameInput.name = `name${studentCounter}`;
+
+      var rollNoInput = document.createElement("input");
+      rollNoInput.type = "text";
+      rollNoInput.placeholder = "Roll No";
+      rollNoInput.required = true;
+      rollNoInput.name = `roll_no${studentCounter}`;
+
+      var contributionInput = document.createElement("input");
+      contributionInput.type = "text";
+      contributionInput.placeholder = "Contribution";
+      contributionInput.required = true;
+      contributionInput.name = `contribution${studentCounter}`;
+
+      studentField.appendChild(nameInput);
+      studentField.appendChild(rollNoInput);
+      studentField.appendChild(contributionInput);
+
+      container.appendChild(studentField);
+
+      studentCounter++; // Increment the counter for the next student
+    }
+
+  </script>
+</body>
+
 </html>
